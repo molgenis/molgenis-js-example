@@ -29,7 +29,7 @@ pipeline {
             steps {
                 container('node') {
                     sh "yarn install"
-                    sh "yarn test"
+                    sh "yarn unit"
                 }
             }
             post {
@@ -48,7 +48,7 @@ pipeline {
                 milestone 1
                 container('node') {
                     sh "yarn install"
-                    sh "yarn test"
+                    sh "yarn unit"
                 }
             }
             post {
@@ -65,7 +65,7 @@ pipeline {
             }
             environment {
                 ORG = 'molgenis'
-                APP_NAME = 'molgenis-api-client'
+                APP_NAME = 'molgenis-js-library-example'
                 REGISTRY = 'registry.npmjs.org'
             }
             steps {

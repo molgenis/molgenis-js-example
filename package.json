@@ -1,14 +1,14 @@
 {
-  "name": "@molgenis/molgenis-api-client",
-  "version": "2.2.0",
-  "description": "A javascript client for the molgenis api",
-  "main": "dist/molgenis-api-client.es.js",
+  "name": "@molgenis/molgenis-js-library-example",
+  "version": "0.0.1",
+  "description": "A javascript example library for MOLGENIS",
+  "main": "dist/molgenis-js-library-example.es.js",
   "scripts": {
-    "lint": "eslint src test tools",
-    "test": "babel-node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
-    "debug": "mocha --compilers js:babel-register --debug-brk",
-    "test:watch": "mocha --compilers js:babel-register --reporter min --watch",
-    "build": "node build/build",
+    "lint": "eslint src test",
+    "unit": "eslint src test; babel-node ./node_modules/istanbul/lib/cli.js cover --dir test/unit/coverage ./node_modules/mocha/bin/_mocha test/unit/specs/**/*.js",
+    "debug": "eslint src test; mocha --compilers js:babel-register --debug-brk",
+    "unit:watch": "eslint src test; mocha --compilers js:babel-register --reporter min --watch",
+    "build": "eslint src test; node build/build",
     "preversion": "yarn install; yarn test; yarn build"
   },
   "publishConfig": {
@@ -17,39 +17,33 @@
   },
   "repository": "git@github.com:molgenis/molgenis-js-library-example.git",
   "keywords": [
-    "molgenis",
-    "api",
-    "rest",
-    "fetch"
+    "molgenis"
   ],
   "author": "MOLGENIS Team, System Genetics, UMCG, Netherlands",
   "license": "LGPL-3.0",
-  "dependencies": {
-    "babel-runtime": "^6.11.6",
-    "form-data": "^2.3.1",
-    "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.4"
+  "peerDependencies": {
+    "babel-runtime": "^6.11.6"
   },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
-    "babel-eslint": "^7.0.0",
+    "babel-eslint": "^8.2.6",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-stage-2": "^6.16.0",
     "babel-register": "^6.16.3",
     "chai": "^4.0.0-canary.1",
-    "coveralls": "^2.11.14",
+    "cross-env": "^5.2.0",
     "del": "^2.2.2",
     "eslint": "^3.8.0",
     "eslint-config-airbnb-base": "^10.0.1",
     "eslint-plugin-import": "^2.2.0",
-    "fetch-mock": "^5.12.1",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^3.1.2",
-    "rollup": "^0.36.3",
+    "rollup": "^0.64.1",
     "rollup-plugin-babel": "^2.6.1",
-    "sinon": "^2.0.0-pre.3"
+    "rollup-plugin-istanbul": "^2.0.1"
   },
   "babel": {
     "presets": [
