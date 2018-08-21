@@ -1,4 +1,4 @@
-import exampleLibrary from '../../../src/molgenis-js-library-example'
+import exampleLibrary from '../../../src/molgenis-js-example'
 import { expect } from 'chai'
 
 describe('Unit test', () => {
