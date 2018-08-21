@@ -6,6 +6,9 @@ module.exports = {
   parserOptions: {
     sourceType: 'module'
   },
+  env: {
+    browser: true,
+  },
   extends: 'standard',
   // add your custom rules here
   'rules': {
