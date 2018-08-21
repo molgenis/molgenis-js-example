@@ -65,7 +65,7 @@ pipeline {
             }
             environment {
                 ORG = 'molgenis'
-                APP_NAME = 'molgenis-js-library-example'
+                APP_NAME = 'molgenis-js-example'
                 REGISTRY = 'registry.npmjs.org'
             }
             steps {
@@ -91,7 +91,7 @@ pipeline {
                     sh "npm config set unsafe-perm true"
                     sh "npm version ${RELEASE_SCOPE} -m '[ci skip] [npm-version] %s'"
 
-                    sh "git push --tags origin master"
+                    sh "git push --tags origin ${BRANCH_NAME}"
 
                     sh "echo //${REGISTRY}/:_authToken=${NPM_TOKEN} > ~/.npmrc"
 
