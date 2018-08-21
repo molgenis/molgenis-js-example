@@ -7,7 +7,7 @@ export default [
 
   // browser-friendly UMD build
   {
-    input: 'src/molgenis-js-example.js',
+    input: 'src/example.js',
     output: {
       name: packageJson.name,
       file: packageJson.browser,
@@ -26,7 +26,7 @@ export default [
   // an array for the `output` option, where we can specify
   // `file` and `format` for each target)
   {
-    input: 'src/molgenis-js-example.js',
+    input: 'src/example.js',
     external: ['ms'],
     output: [
       { file: packageJson.main, format: 'cjs' },

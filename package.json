@@ -2,9 +2,9 @@
   "name": "@molgenis/example",
   "version": "0.0.1",
   "description": "A javascript example library for MOLGENIS",
-  "main": "dist/molgenis-js-example.js",
-  "module": "dist/molgenis-js-example.es.js",
-  "browser": "dist/molgenis-js-example.umd.js",
+  "main": "dist/example.js",
+  "module": "dist/example.es.js",
+  "browser": "dist/example.umd.js",
   "scripts": {
     "lint": "eslint src test",
     "unit": "eslint src test; babel-node ./node_modules/istanbul/lib/cli.js cover --dir test/unit/coverage ./node_modules/mocha/bin/_mocha test/unit/specs/**/*.js",
