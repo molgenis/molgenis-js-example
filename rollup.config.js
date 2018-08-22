@@ -1,7 +1,8 @@
-'use strict';
+'use strict'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import packageJson from './package.json'
+import babel from 'rollup-plugin-babel'
 
 export default [
 
@@ -14,8 +15,13 @@ export default [
       format: 'umd'
     },
     plugins: [
-      resolve(), // so Rollup can find `ms`
-      commonjs() // so Rollup can convert `ms` to an ES module
+      resolve(), // so Rollup can find `mdurl`
+      commonjs(), // so Rollup can convert `mdurl` to an ES module
+      babel({
+        babelrc: false,
+        presets: [['env', { modules: false }]],
+        exclude: ['node_modules/**']
+      })
     ]
   },
 
@@ -31,6 +37,13 @@ export default [
     output: [
       { file: packageJson.main, format: 'cjs' },
       { file: packageJson.module, format: 'es' }
+    ],
+    plugins: [
+      babel({
+        babelrc: false,
+        presets: [['env', { modules: false }]],
+        exclude: ['node_modules/**']
+      })
     ]
   }
 ]
