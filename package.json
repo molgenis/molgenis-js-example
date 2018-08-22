@@ -2,9 +2,9 @@
   "name": "@molgenis/example",
   "version": "0.0.1",
   "description": "A javascript example library for MOLGENIS",
-  "main": "dist/molgenis-js-example.js",
-  "module": "dist/molgenis-js-example.es.js",
-  "browser": "dist/molgenis-js-example.umd.js",
+  "main": "dist/example.js",
+  "module": "dist/example.es.js",
+  "browser": "dist/example.umd.js",
   "scripts": {
     "lint": "eslint src test",
     "unit": "eslint src test; babel-node ./node_modules/istanbul/lib/cli.js cover --dir test/unit/coverage ./node_modules/mocha/bin/_mocha test/unit/specs/**/*.js",
@@ -25,13 +25,13 @@
   "license": "LGPL-3.0",
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-stage-2": "^6.16.0",
-    "babel-register": "^6.16.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "chai": "^4.0.0-canary.1",
     "cross-env": "^5.2.0",
@@ -47,11 +47,12 @@
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-commonjs": "^9.1.5",
     "rollup-plugin-istanbul": "^2.0.1",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "standard": "^11.0.1"
   },
   "babel": {
     "presets": [
-      "latest",
+      "env",
       "stage-2"
     ],
     "plugins": [
