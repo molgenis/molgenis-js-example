@@ -1,6 +1,6 @@
 {
   "name": "@molgenis/example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A javascript example library for MOLGENIS",
   "main": "dist/example.js",
   "module": "dist/example.es.js",
