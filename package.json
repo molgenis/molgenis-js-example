@@ -6,11 +6,12 @@
   "module": "dist/example.es.js",
   "browser": "dist/example.umd.js",
   "scripts": {
-    "lint": "eslint src test",
-    "unit": "eslint src test; babel-node ./node_modules/istanbul/lib/cli.js cover --dir test/unit/coverage ./node_modules/mocha/bin/_mocha test/unit/specs/**/*.js",
-    "debug": "eslint src test; mocha --compilers js:babel-register --debug-brk",
-    "unit:watch": "eslint src test; mocha --compilers js:babel-register --reporter min --watch",
+    "lint": "standard",
+    "unit": "standard; babel-node ./node_modules/istanbul/lib/cli.js cover --dir test/unit/coverage ./node_modules/mocha/bin/_mocha test/unit/specs/**/*.js",
+    "debug": "standard; mocha --compilers js:babel-register --debug-brk",
+    "unit:watch": "standard; mocha --compilers js:babel-register --reporter min --watch",
     "build": "rollup -c",
+    "postversion": "yarn build"
     "preversion": "yarn install; yarn build"
   },
   "publishConfig": {
@@ -30,17 +31,10 @@
     "babel-eslint": "^8.2.6",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "chai": "^4.0.0-canary.1",
     "cross-env": "^5.2.0",
-    "eslint": "^4.15.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-standard": "^3.1.0",
     "istanbul": "1.1.0-alpha.1",
     "mocha": "^3.1.2",
     "rollup": "^0.64.1",
@@ -52,11 +46,13 @@
   },
   "babel": {
     "presets": [
-      "env",
-      "stage-2"
+      "env"
     ],
     "plugins": [
       "transform-runtime"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
