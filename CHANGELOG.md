@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/molgenis/molgenis-js-example/compare/v1.0.5...v1.0.6) (2019-05-28)
+
+
+### Bug Fixes
+
+* don't use ^ for the regex ([558b2ad](https://github.com/molgenis/molgenis-js-example/commit/558b2ad))
+* even less ^ ([57116ef](https://github.com/molgenis/molgenis-js-example/commit/57116ef))
+
 ## [1.0.5](https://github.com/molgenis/molgenis-js-example/compare/v1.0.4...v1.0.5) (2019-05-28)
 
 
