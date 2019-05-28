@@ -45,7 +45,7 @@ pipeline {
                 allOf {
                     branch 'master'
                     not {
-                        changelog '.*^\\[skip ci\\]$'
+                        changelog '.*\\[skip ci\\]$'
                     }
                 }
             }
