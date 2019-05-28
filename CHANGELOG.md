@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/molgenis/molgenis-js-example/compare/v1.0.6...v1.0.7) (2019-05-28)
+
+
+### Bug Fixes
+
+* use environment variables ([ac1b421](https://github.com/molgenis/molgenis-js-example/commit/ac1b421))
+
 ## [1.0.6](https://github.com/molgenis/molgenis-js-example/compare/v1.0.5...v1.0.6) (2019-05-28)
 
 
