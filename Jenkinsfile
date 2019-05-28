@@ -89,13 +89,8 @@ pipeline {
                     sh "git checkout -f ${BRANCH_NAME}"
 
                     sh "npm config set unsafe-perm true"
-                    sh "npm version ${RELEASE_SCOPE} -m '[ci skip] [npm-version] %s'"
 
-                    sh "git push --tags origin ${BRANCH_NAME}"
-
-                    sh "echo //${REGISTRY}/:_authToken=${NPM_TOKEN} > ~/.npmrc"
-
-                    sh "npm publish"
+                    sh "npx semantic-release"
                 }
             }
         }
