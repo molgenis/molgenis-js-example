@@ -73,11 +73,15 @@ pipeline {
                     }
                 }
             }
+            environment {
+                GIT_AUTHOR_EMAIL = 'molgenis+ci@gmail.com'
+                GIT_AUTHOR_NAME = 'molgenis-jenkins'
+                GIT_COMMITTER_EMAIL = 'molgenis+ci@gmail.com'
+                GIT_COMMITTER_NAME = 'molgenis-jenkins'
+            }
             steps {
                 milestone 2
                 container('node') {
-                    sh "git config --global user.email molgenis+ci@gmail.com"
-                    sh "git config --global user.name molgenis-jenkins"
                     sh "npx semantic-release"
                 }
             }
