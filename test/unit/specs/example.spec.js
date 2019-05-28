@@ -6,7 +6,7 @@ describe('Unit test', () => {
   describe('sum', () => {
     it('should count the total numbers', done => {
       const result = exampleLibrary.exampleMethod()
-      expect(result).to.equal(3)
+      expect(result).to.equal(-1)
       done()
     })
   })
