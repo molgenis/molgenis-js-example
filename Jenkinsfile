@@ -69,27 +69,10 @@ pipeline {
                 REGISTRY = 'registry.npmjs.org'
             }
             steps {
-                timeout(time: 30, unit: 'MINUTES') {
-                    script {
-                        env.RELEASE_SCOPE = input(
-                                message: 'Do you want to release?',
-                                ok: 'Release',
-                                parameters: [
-                                        choice(choices: 'patch\nminor\nmajor', description: '', name: 'RELEASE_SCOPE')
-                                ]
-                        )
-                    }
-                }
                 milestone 2
                 container('node') {
                     sh "git config --global user.email molgenis+ci@gmail.com"
                     sh "git config --global user.name molgenis-jenkins"
-                    sh "git remote set-url origin https://${GITHUB_TOKEN}@github.com/${ORG}/${APP_NAME}.git"
-
-                    sh "git checkout -f ${BRANCH_NAME}"
-
-                    sh "npm config set unsafe-perm true"
-
                     sh "npx semantic-release"
                 }
             }
