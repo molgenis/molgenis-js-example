@@ -42,7 +42,12 @@ pipeline {
         }
         stage('Install, test and build: [ master ]') {
             when {
-                branch 'master'
+                allOf {
+                    branch 'master'
+                    not {
+                        changelog '.*^\\[skip ci\\]$'
+                    }
+                }
             }
             steps {
                 milestone 1
@@ -61,12 +66,12 @@ pipeline {
         }
         stage('Release: [ master ]') {
             when {
-                branch 'master'
-            }
-            environment {
-                ORG = 'molgenis'
-                APP_NAME = 'molgenis-js-example'
-                REGISTRY = 'registry.npmjs.org'
+                allOf {
+                    branch 'master'
+                    not {
+                        changelog '.*^\\[skip ci\\]$'
+                    }
+                }
             }
             steps {
                 milestone 2
