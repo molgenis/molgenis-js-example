@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/molgenis/molgenis-js-example/compare/v1.0.7...v1.0.8) (2019-06-07)
+
+
+### Bug Fixes
+
+* ci build ([aec4bba](https://github.com/molgenis/molgenis-js-example/commit/aec4bba))
+
 ## [1.0.7](https://github.com/molgenis/molgenis-js-example/compare/v1.0.6...v1.0.7) (2019-05-28)
 
 
